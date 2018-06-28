@@ -9,3 +9,9 @@ export_presets.cfg
 
 # Mono-specific ignores
 .mono/
+
+# Logs when editor logging is enabled
+logs/
+
+# Exported files
+dist/
