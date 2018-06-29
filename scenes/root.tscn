@@ -1,11 +1,20 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/game_controller.gd" type="Script" id=1]
+[ext_resource path="res://scenes/rec_hex_board.svg" type="Texture" id=2]
 
 [node name="root" type="Node" index="0"]
 
 [node name="game_view" type="Node2D" parent="." index="0"]
 
+position = Vector2( 514.5, 306 )
+scale = Vector2( 15.9844, 9.53125 )
 script = ExtResource( 1 )
+
+[node name="board_view" type="Sprite" parent="game_view" index="0"]
+
+position = Vector2( -10.479, 4.40656 )
+scale = Vector2( 0.0625611, 0.104918 )
+texture = ExtResource( 2 )
 
 
