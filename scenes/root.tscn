@@ -10,11 +10,13 @@
 position = Vector2( 514.5, 306 )
 scale = Vector2( 15.9844, 9.53125 )
 script = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Transform" ]
 
 [node name="board_view" type="Sprite" parent="game_view" index="0"]
 
 position = Vector2( -10.479, 4.40656 )
 scale = Vector2( 0.0625611, 0.104918 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Material", "Visibility" ]
 
 

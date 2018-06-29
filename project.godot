@@ -14,6 +14,10 @@ config/name="rec-hex"
 run/main_scene="res://scenes/root.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/height=700
+
 [editor_plugins]
 
 enabled=PoolStringArray( "gut" )
