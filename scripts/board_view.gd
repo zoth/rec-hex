@@ -5,6 +5,7 @@ const _x_offset = -317
 const _y_offset = -317
 const _x_step_offset = 54.8
 const _y_step_offset = 54.8
+var player_turn = Utils.DARK_TYPE setget set_player_turn, get_player_turn
 
 func _ready():
 	var cell_scene = preload("res://scenes/cell_view.tscn")
@@ -14,10 +15,17 @@ func _ready():
 			var node = cell_scene.instance()
 			node.move_local_x( _x_offset + ( _x_step_offset * x ) )
 			node.move_local_y( _y_offset + ( _y_step_offset * y ) )
-			node.set_name( Utils.make_cell_name(x, y) )
-			_cells[node.get_name()] = node
+			node.cell_name = Utils.make_cell_name(x, y)
+			node.board = self
+			_cells[node.cell_name] = node
 			add_child(node)
 			
-	
+
+func set_player_turn(p):
+	player_turn = p
+
+func get_player_turn():
+	return player_turn
+
 
 
