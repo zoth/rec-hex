@@ -14,6 +14,10 @@ config/name="rec-hex"
 run/main_scene="res://scenes/root.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Utils="*res://scripts/utils.gd"
+
 [display]
 
 window/size/height=700

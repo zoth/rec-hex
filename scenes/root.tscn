@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/game_controller.gd" type="Script" id=1]
 [ext_resource path="res://scenes/rec_hex_board.svg" type="Texture" id=2]
+[ext_resource path="res://scripts/board_view.gd" type="Script" id=3]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 [node name="game_view" type="Node2D" parent="." index="0"]
 
@@ -17,6 +18,7 @@ _sections_unfolded = [ "Material", "Transform" ]
 position = Vector2( -10.479, 4.40656 )
 scale = Vector2( 0.0625611, 0.104918 )
 texture = ExtResource( 2 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Material", "Visibility" ]
 
 
