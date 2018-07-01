@@ -21,8 +21,12 @@ texture = ExtResource( 2 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Material", "Visibility" ]
 
-[connection signal="cell_selected" from="game_view/board_view" to="game_view" method="_on_cell_selected"]
+[connection signal="play_made" from="game_view" to="game_view/board_view" method="_on_play_made"]
 
-[connection signal="zoth" from="game_view/board_view" to="game_view" method="_on_board_view_zoth"]
+[connection signal="turn_change" from="game_view" to="game_view/board_view" method="_on_game_view_turn_change"]
+
+[connection signal="turn_change" from="game_view" to="game_view/board_view" method="_on_turn_change"]
+
+[connection signal="cell_selected" from="game_view/board_view" to="game_view" method="_on_cell_selected"]
 
 

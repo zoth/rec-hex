@@ -49,6 +49,18 @@ func get_cell_name():
 
 func set_type(t):
 	_type = Utils.valid_type(t)
+	match(_type):
+		Utils.DARK_TYPE:
+			$dark_cell.modulate = Color(1, 1, 1, 1)
+			$dark_cell.show()
+		Utils.LIGHT_TYPE:
+			$light_cell.modulate = Color(1, 1, 1, 1)
+			$light_cell.show()
+		Utils.NONE_TYPE:
+			$dark_cell.modulate = Color(1, 1, 1, 0.5)
+			$light_cell.modulate = Color(1, 1, 1, 0.5)
+			$light_cell.hide()
+			$dark_cell.hide()
 
 func get_type():
 	return _type

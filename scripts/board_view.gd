@@ -1,6 +1,5 @@
 extends Sprite
 
-signal zoth(n)
 signal cell_selected(n)
 
 var _cells = {}
@@ -36,3 +35,12 @@ func get_player_turn():
 func cell_selected(n):
 	emit_signal("cell_selected", n)
 
+
+
+func _on_play_made(id):
+	if _cells.has(id):
+		var cell = _cells[id]
+		cell.set_type(player_turn)
+
+func _on_turn_change(type):
+	player_turn = type
