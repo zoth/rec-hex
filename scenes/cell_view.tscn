@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/light_cell.svg" type="Texture" id=2]
 [ext_resource path="res://scenes/dark_cell.svg" type="Texture" id=3]
 
-[node name="cell_view" type="Area2D" index="0"]
+[node name="cell_view" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
