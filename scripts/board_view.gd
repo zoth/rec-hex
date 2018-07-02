@@ -7,14 +7,17 @@ const _x_offset = -317
 const _y_offset = -317
 const _x_step_offset = 54.8
 const _y_step_offset = 54.8
-var player_turn = Utils.DARK_TYPE setget set_player_turn, get_player_turn
+var player_turn = Utils.NONE_TYPE setget set_player_turn, get_player_turn
 var cell_scene = null
-
 
 
 func _ready():
 	cell_scene = preload("res://scenes/cell_view.tscn")
-	
+			
+func _reset(cells):
+	for id in _cells.keys():
+		var c = _cells[id]
+		c.free()	
 	for y in range(Utils.board_size):
 		for x in range(Utils.board_size):
 			var node = cell_scene.instance()
@@ -23,8 +26,9 @@ func _ready():
 			node.cell_name = Utils.make_cell_name(x, y)
 			node.board = self
 			_cells[node.cell_name] = node
+			if cells.has(node.cell_name):
+				node.set_type(cells[node.name])
 			add_child(node)
-			
 
 func set_player_turn(p):
 	player_turn = p
@@ -33,9 +37,7 @@ func get_player_turn():
 	return player_turn
 
 func cell_selected(n):
-	emit_signal("cell_selected", n)
-
-
+	emit_signal(Utils.CELL_SELECTED_EVENT, n)
 
 func _on_play_made(id):
 	if _cells.has(id):
@@ -44,3 +46,7 @@ func _on_play_made(id):
 
 func _on_turn_change(type):
 	player_turn = type
+
+func _on_board_setup(cells, turn):
+	_reset(cells)
+	player_turn = turn

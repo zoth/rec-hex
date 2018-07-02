@@ -2,11 +2,12 @@ extends Node2D
 
 signal play_made(id)
 signal turn_change(type)
+signal board_setup(cells, turn)
 
 var _current_player = Utils.DARK_TYPE
 
 func _ready():
-	pass
+	_start()
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -19,6 +20,7 @@ func _on_cell_selected(id):
 		_current_player = Utils.LIGHT_TYPE
 	else:
 		_current_player = Utils.DARK_TYPE
-	emit_signal("turn_change", _current_player)
+	emit_signal(Utils.TURN_CHANGE_EVENT, _current_player)
 
-
+func _start():
+	emit_signal("board_setup",{},_current_player)
