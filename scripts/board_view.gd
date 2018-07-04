@@ -58,3 +58,9 @@ func _on_play_enabled(b):
 func get_play_enabled():
 	return _play_enabled
 
+
+
+func _on_game_won(winning_path):
+	for n in _cells:
+		if !winning_path.has(n):
+			_cells[n].show_dim()

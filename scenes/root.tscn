@@ -8,6 +8,7 @@
 
 [node name="game_view" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( 514.5, 306 )
 scale = Vector2( 15.9844, 9.53125 )
 script = ExtResource( 1 )
@@ -22,6 +23,8 @@ script = ExtResource( 3 )
 _sections_unfolded = [ "Material", "Visibility" ]
 
 [connection signal="board_setup" from="game_view" to="game_view/board_view" method="_on_board_setup"]
+
+[connection signal="game_won" from="game_view" to="game_view/board_view" method="_on_game_won"]
 
 [connection signal="play_enabled" from="game_view" to="game_view/board_view" method="_on_play_enabled"]
 
