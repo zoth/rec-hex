@@ -9,6 +9,7 @@ const _x_step_offset = 54.8
 const _y_step_offset = 54.8
 var player_turn = Utils.NONE_TYPE setget set_player_turn, get_player_turn
 var cell_scene = null
+var _play_enabled
 
 
 func _ready():
@@ -50,3 +51,10 @@ func _on_turn_change(type):
 func _on_board_setup(cells, turn):
 	_reset(cells)
 	player_turn = turn
+
+func _on_play_enabled(b):
+	_play_enabled = b
+
+func get_play_enabled():
+	return _play_enabled
+

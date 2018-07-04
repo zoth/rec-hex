@@ -3,6 +3,7 @@ extends Node2D
 signal play_made(id)
 signal turn_change(type)
 signal board_setup(cells, turn)
+signal play_enabled(b)
 
 var _current_player = Utils.DARK_TYPE
 
@@ -24,3 +25,4 @@ func _on_cell_selected(id):
 
 func _start():
 	emit_signal("board_setup",{},_current_player)
+	emit_signal("play_enabled", true )

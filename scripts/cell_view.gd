@@ -19,23 +19,25 @@ func _ready():
 	$light_cell.modulate = Color(1, 1, 1, 0.5)
 
 func on_mouse_entered():
-	_mouse_hover = true
-	if _type == Utils.NONE_TYPE:
-		if get_board().player_turn == Utils.DARK_TYPE:
-			$dark_cell.show()
-		elif get_board().player_turn == Utils.LIGHT_TYPE:
-			$light_cell.show()
+	if board.get_play_enabled():
+		_mouse_hover = true
+		if _type == Utils.NONE_TYPE:
+			if get_board().player_turn == Utils.DARK_TYPE:
+				$dark_cell.show()
+			elif get_board().player_turn == Utils.LIGHT_TYPE:
+				$light_cell.show()
 		
 
 func on_mouse_exited():
-	_mouse_hover = false
-	_mouse_clicked = false
-	if _type == Utils.NONE_TYPE:
-		$light_cell.hide()
-		$dark_cell.hide()
+	if board.get_play_enabled():
+		_mouse_hover = false
+		_mouse_clicked = false
+		if _type == Utils.NONE_TYPE:
+			$light_cell.hide()
+			$dark_cell.hide()
 
 func _process(delta):
-	if(Input.is_action_pressed("mouse_left")):
+	if(board.get_play_enabled() && Input.is_action_pressed("mouse_left")):
 		if _mouse_hover == true && _type == Utils.NONE_TYPE && _mouse_clicked == false:
 			_mouse_clicked = true
 			board.cell_selected(cell_name)
