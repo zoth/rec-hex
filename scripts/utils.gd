@@ -6,7 +6,7 @@ const TURN_CHANGE_EVENT = "turn_change"
 const CELL_SELECTED_EVENT = "cell_selected"
 
 enum {DARK_TYPE, LIGHT_TYPE, NONE_TYPE}
-enum {TOP, RIGHT_UPPER, RIGHT_LOWER, BOTTOM, LEFT_LOWER, LEFT_UPPER, N_UNKOWN}
+enum {TOP_NEIGHBOR, R_UPPER_NEIGHBOR, R_LOWER_NEIGHBOR, BOTTOM_NEIGHBOR, L_LOWER_NEIGHBOR, L_UPPER_NEIGHBOR, UNKOWN_NEIGHBOR}
 
 func valid_type(t):
 	if t == DARK_TYPE || t == LIGHT_TYPE:
@@ -19,9 +19,9 @@ var _cell_name_format = "CELLx%dy%d"
 func make_cell_name(x, y):
 	return _cell_name_format % [x,y]
 
-func valid_neiebor(n):
-	if n == TOP || n == RIGHT_UPPER || n == RIGHT_LOWER || n == BOTTOM || n == LEFT_LOWER || n == LEFT_UPPER:
+func valid_neighbor(n):
+	if n == TOP_NEIGHBOR || n == R_UPPER_NEIGHBOR || n == R_LOWER_NEIGHBOR || n == BOTTOM_NEIGHBOR || n == L_LOWER_NEIGHBOR || n == L_UPPER_NEIGHBOR:
 		return n
 	else:
-		return N_UNKOWN
+		return UNKOWN_NEIGHBOR
 
