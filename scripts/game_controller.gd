@@ -1,5 +1,7 @@
 extends Node2D
 
+const BoardState = preload("board_state.gd")
+
 signal play_made(id)
 signal turn_change(type)
 signal board_setup(cells, turn)
@@ -24,5 +26,6 @@ func _on_cell_selected(id):
 	emit_signal(Utils.TURN_CHANGE_EVENT, _current_player)
 
 func _start():
+	var s = BoardState.new()
 	emit_signal("board_setup",{},_current_player)
 	emit_signal("play_enabled", true )
