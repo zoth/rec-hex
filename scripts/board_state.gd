@@ -10,9 +10,15 @@ func _init():
 			var n = Utils.make_cell_name(x,y)
 			var c = CellState.new(n)
 			_cells[n] = c
+	var limit = Utils.board_size - 1
 	for x in range(Utils.board_size):
 		for y in range(Utils.board_size):
+			var top_edge = (y == 0)
+			var bottom_edge = (y == limit)
+			var right_edge = (x == limit)
+			var left_edge = (x == 0)
 			var c = _cell(x, y)
+			c.set_edges(top_edge, right_edge, bottom_edge, left_edge)
 			var top = _cell(x + 1, y - 1)
 			var r_upper = _cell(x + 1, y)
 			var r_lower = _cell(x, y + 1)
