@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/light_cell.svg-29d01886d124c8c3a9bdae23993de1f7.stex"
+path="res://.import/light_cell.png-9128c8be9757aea5af73543bfa996feb.stex"
 
 [deps]
 
-source_file="res://scenes/light_cell.svg"
-source_md5="cb8f51780dc2352f60680391da844b45"
+source_file="res://scenes/light_cell.png"
+source_md5="ec5e266812c70056e7e76e5db2b22309"
 
-dest_files=[ "res://.import/light_cell.svg-29d01886d124c8c3a9bdae23993de1f7.stex" ]
-dest_md5="ce9159d9804d02331ddb74c740e6e9e5"
+dest_files=[ "res://.import/light_cell.png-9128c8be9757aea5af73543bfa996feb.stex" ]
+dest_md5="fde834094c5eedfcd486e0ac781993ba"
 
 [params]
 

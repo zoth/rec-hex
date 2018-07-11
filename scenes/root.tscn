@@ -1,14 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/game_controller.gd" type="Script" id=1]
-[ext_resource path="res://scenes/rec_hex_board.svg" type="Texture" id=2]
+[ext_resource path="res://scenes/board.png" type="Texture" id=2]
 [ext_resource path="res://scripts/board_view.gd" type="Script" id=3]
 
-[node name="root" type="Node" index="0"]
+[node name="root" type="Node"]
 
 [node name="game_view" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
 position = Vector2( 514.5, 306 )
 scale = Vector2( 15.9844, 9.53125 )
 script = ExtResource( 1 )

@@ -3,10 +3,10 @@ extends Sprite
 signal cell_selected(n)
 
 var _cells = {}
-const _x_offset = -317
-const _y_offset = -317
-const _x_step_offset = 54.8
-const _y_step_offset = 54.8
+const _x_offset = -238
+const _y_offset = -238
+const _x_step_offset = 41.1
+const _y_step_offset = 41.1
 var player_turn = Utils.NONE_TYPE setget set_player_turn, get_player_turn
 var cell_scene = null
 var _play_enabled

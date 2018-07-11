@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dark_cell.svg-85833b8677a8c15fdc1a8860206a570c.stex"
+path="res://.import/dark_cell.png-8824b39c5a94cc8cf83586567c624266.stex"
 
 [deps]
 
-source_file="res://scenes/dark_cell.svg"
-source_md5="29b8167b9149a17934021304ca60504a"
+source_file="res://scenes/dark_cell.png"
+source_md5="b0e85c7f60cafc3bcc1febf67a0b8b4a"
 
-dest_files=[ "res://.import/dark_cell.svg-85833b8677a8c15fdc1a8860206a570c.stex" ]
-dest_md5="90c4bac74951baf2f1ae8ad45fc1f5ae"
+dest_files=[ "res://.import/dark_cell.png-8824b39c5a94cc8cf83586567c624266.stex" ]
+dest_md5="189396964985449ecd3b8e68a2e3d73d"
 
 [params]
 
