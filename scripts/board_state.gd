@@ -90,6 +90,15 @@ func _set_completed_path(points):
 
 func get_completed_path():
 	return _completed_path
+	
+func get_random_free_cell():
+	for c in _cells:
+		var x = randi() % Utils.board_size
+		var y = randi() % Utils.board_size
+		var n = Utils.make_cell_name(x,y)
+		if _cells[n].get_type() == Utils.NONE_TYPE:
+			return n
+	return null
 
 func _cell(x, y):
 	var n = Utils.make_cell_name(x,y)

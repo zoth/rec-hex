@@ -40,25 +40,22 @@ func get_player_turn():
 func cell_selected(n):
 	emit_signal(Utils.CELL_SELECTED_EVENT, n)
 
-func _on_play_made(id):
+func _on_play_made(id, player):
 	if _cells.has(id):
 		var cell = _cells[id]
-		cell.set_type(player_turn)
+		cell.set_type(player)
 
 func _on_turn_change(type):
 	player_turn = type
 
-func _on_board_setup(cells, turn):
+func _on_board_setup(cells):
 	_reset(cells)
-	player_turn = turn
 
 func _on_play_enabled(b):
 	_play_enabled = b
 
 func get_play_enabled():
 	return _play_enabled
-
-
 
 func _on_game_won(winning_path):
 	for n in _cells:
